@@ -63,7 +63,7 @@ local function add_particlespawner(src, teleport_type)
 		maxsize=1.25,
 		texture= "particle.png",
 		glow= 15
-    })
+	})
 end
 
 
@@ -116,8 +116,7 @@ minetest.register_craftitem("teleport_book:book", {
 		local src= user:getpos()
 		if dest == nil then
 			meta:set_string("_dest", minetest.pos_to_string(src))
-			--meta:set_int("_usages", math.random(25, 75))
-			meta:set_int("_usages", math.random(2, 5))
+			meta:set_int("_usages", math.random(25, 75))
 			meta:set_string("description", name_book.." for "..minetest.pos_to_string(src))
 			add_particlespawner(src, "teleport_from")
 			return itemstack
